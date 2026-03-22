@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ミルクと粉の料理教室 | お菓子作りレッスン</title>
+  <title>ひとつうえのお菓子作りを、 | お菓子作りレッスン</title>
   <meta name="description" content="熊本の少人数制お料理教室。季節のお菓子作りと、家庭で再現できるレシピを学べます。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +13,12 @@
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top">ミルクと粉の料理教室</a>
+      <a class="brand" href="#top">ひとつうえのお菓子作りを、</a>
       <button class="menu-btn" aria-expanded="false" aria-controls="global-nav">menu</button>
       <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
-        <a href="#about">教室について</a>
-        <a href="#gallery">作ったお菓子</a>
-        <a href="#recipes">レシピ</a>
+        <a href="#about">room</a>
+        <a href="#gallery">Lesson</a>
+        <a href="#recipes">menu</a>
         <a href="#lesson">レッスン</a>
         <a href="#contact">申込</a>
       </nav>
@@ -46,136 +46,179 @@
             <a class="btn btn-light" href="#recipes">レシピを見る</a>
           </div>
         </div>
-        <div class="hero-card">
-          <p class="hero-card-title">今月のテーマ</p>
+      </div>
+    </section>
+
+    <section class="monthly-theme section-pad">
+      <div class="wrap theme-card">
+        <div class="theme-image">
+          <p class="theme-image-label">今月のテーマ</p>
+          <img src="images/monthly-theme.jpg" alt="今月のテーマ写真" loading="lazy" />
+        </div>
+        <div>
           <h2>いちごのショートケーキ</h2>
-          <ul>
+          <ul class="theme-list">
             <li>開催日: 2026年4月6日 / 4月13日 / 4月20日</li>
             <li>時間: 10:30 - 13:00</li>
             <li>定員: 各回6名（先着）</li>
           </ul>
+          <a class="btn btn-primary" href="#contact">体験レッスンを予約</a>
         </div>
       </div>
     </section>
 
     <section id="about" class="about section-pad">
-      <div class="wrap split">
-        <div>
-          <p class="section-label">about</p>
-          <h2>乳製品と季節素材にこだわる教室です</h2>
+      <div class="wrap about-blend">
+        <img class="about-photo" src="images/about-class.jpg" alt="教室について" loading="lazy" />
+        <div class="about-copy">
+          <p class="section-label">教室について</p>
+          <h2><span class="about-title-line">ひとつうえのお菓子作りを、</span><br />毎日の台所で。</h2>
           <p>
-            お店のお菓子のような見た目と、家庭でも再現しやすい工程の両立を目指しています。
-            材料の選び方、生地の状態の見極め、焼き上がりの判断まで、理由を添えてお伝えします。
+            目指すのは、見た目だけでなく味わいまで満足できる「ひとつうえ」の仕上がりです。
+            素材の活かし方、混ぜ方や焼き加減の見極め、失敗しにくい手順まで、
+            ご自宅でも再現できる形で丁寧にお伝えします。
           </p>
-        </div>
-        <div class="feature-list">
-          <article>
-            <h3>少人数制</h3>
-            <p>1クラス最大6名。全員の手元を見ながら進行します。</p>
-          </article>
-          <article>
-            <h3>レシピ配布</h3>
-            <p>写真付きレシピを毎回配布。復習しやすい構成です。</p>
-          </article>
-          <article>
-            <h3>初心者歓迎</h3>
-            <p>計量や道具の扱い方からゆっくり説明します。</p>
-          </article>
+          <p>
+            少人数で手元を確認しながら進めるので、初心者の方も安心して参加できます。
+            写真付きレシピを毎回お渡しし、レッスン後の復習までしっかりサポートします。
+          </p>
         </div>
       </div>
     </section>
 
     <section id="gallery" class="gallery section-pad">
       <div class="wrap">
-        <p class="section-label">sweets gallery</p>
+        <p class="section-label">lesson</p>
         <h2>Lesson</h2>
-        <div class="gallery-grid">
-          <article class="sweet-card">
-            <div class="thumb t1">
-              <img src="images/lesson-croissant.jpg" alt="クロワッサン" loading="lazy" />
+        <div class="lesson-marquee" aria-label="レッスンメニュー一覧">
+          <div class="lesson-track">
+            <div class="lesson-group">
+              <article class="sweet-card">
+                <div class="thumb t1">
+                  <img src="images/lesson-croissant.jpg" alt="クロワッサン" loading="lazy" />
+                </div>
+                <h3>クロワッサン</h3>
+                <p>カスタードと旬のいちごを重ねた春の定番。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t2">
+                  <img src="images/lesson-canele.jpg" alt="カヌレ" loading="lazy" />
+                </div>
+                <h3>カヌレ</h3>
+                <p>低温でじっくり火を入れた、とろける口どけ。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t3">
+                  <img src="images/lesson-orange-tart.jpg" alt="オレンジタルト" loading="lazy" />
+                </div>
+                <h3>オレンジタルト</h3>
+                <p>ミルクのコクと塩のアクセントが人気。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t4">
+                  <img src="images/lesson-macaron.jpg" alt="マカロン" loading="lazy" />
+                </div>
+                <h3>マカロン</h3>
+                <p>香り高く、翌日もしっとり楽しめます。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t5">
+                  <img src="images/lesson-eclair.jpg" alt="エクレア" loading="lazy" />
+                </div>
+                <h3>エクレア</h3>
+                <p>香ばしい生地に軽いクリームをたっぷり絞ります。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t6">
+                  <img src="images/lesson-baked-cheesecake.jpg" alt="ベイクドチーズケーキ" loading="lazy" />
+                </div>
+                <h3>ベイクドチーズケーキ</h3>
+                <p>しっとり濃厚で、余韻まで楽しめる定番ケーキ。</p>
+              </article>
             </div>
-            <h3>クロワッサン</h3>
-            <p>カスタードと旬のいちごを重ねた春の定番。</p>
-          </article>
-          <article class="sweet-card">
-            <div class="thumb t2">
-              <img src="images/lesson-canele.jpg" alt="カヌレ" loading="lazy" />
+            <div class="lesson-group" aria-hidden="true">
+              <article class="sweet-card">
+                <div class="thumb t1">
+                  <img src="images/lesson-croissant.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>クロワッサン</h3>
+                <p>カスタードと旬のいちごを重ねた春の定番。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t2">
+                  <img src="images/lesson-canele.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>カヌレ</h3>
+                <p>低温でじっくり火を入れた、とろける口どけ。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t3">
+                  <img src="images/lesson-orange-tart.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>オレンジタルト</h3>
+                <p>ミルクのコクと塩のアクセントが人気。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t4">
+                  <img src="images/lesson-macaron.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>マカロン</h3>
+                <p>香り高く、翌日もしっとり楽しめます。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t5">
+                  <img src="images/lesson-eclair.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>エクレア</h3>
+                <p>香ばしい生地に軽いクリームをたっぷり絞ります。</p>
+              </article>
+              <article class="sweet-card">
+                <div class="thumb t6">
+                  <img src="images/lesson-baked-cheesecake.jpg" alt="" loading="lazy" />
+                </div>
+                <h3>ベイクドチーズケーキ</h3>
+                <p>しっとり濃厚で、余韻まで楽しめる定番ケーキ。</p>
+              </article>
             </div>
-            <h3>カヌレ</h3>
-            <p>低温でじっくり火を入れた、とろける口どけ。</p>
-          </article>
-          <article class="sweet-card">
-            <div class="thumb t3">
-              <img src="images/lesson-orange-tart.jpg" alt="オレンジタルト" loading="lazy" />
-            </div>
-            <h3>オレンジタルト</h3>
-            <p>ミルクのコクと塩のアクセントが人気。</p>
-          </article>
-          <article class="sweet-card">
-            <div class="thumb t4">
-              <img src="images/lesson-macaron.jpg" alt="マカロン" loading="lazy" />
-            </div>
-            <h3>マカロン</h3>
-            <p>香り高く、翌日もしっとり楽しめます。</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="recipes" class="recipes section-pad">
       <div class="wrap">
-        <p class="section-label">recipes</p>
-        <h2>人気レシピ</h2>
-        <div class="recipe-grid">
-          <article class="recipe-card">
-            <header>
-              <h3>基本のミルクプリン</h3>
-              <p>調理時間 25分 / 冷却 2時間</p>
-            </header>
-            <div class="recipe-meta">
-              <p><strong>材料（4個分）</strong></p>
-              <p>牛乳 400ml / 砂糖 40g / ゼラチン 6g / バニラ少々</p>
-            </div>
-            <ol>
-              <li>牛乳の半量を鍋で温め、砂糖を溶かす。</li>
-              <li>ふやかしたゼラチンを加え、完全に溶かす。</li>
-              <li>残りの牛乳とバニラを混ぜ、器に流す。</li>
-              <li>冷蔵庫で2時間以上冷やして完成。</li>
-            </ol>
+        <p class="section-label">menu</p>
+        <h2>menu</h2>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-1.png" alt="シュークリーム" loading="lazy" />
+            <h3>シュークリーム</h3>
+            <p class="menu-desc">バターの香りと層の食感をしっかり楽しめる定番。</p>
           </article>
-
-          <article class="recipe-card">
-            <header>
-              <h3>しっとりガトーショコラ</h3>
-              <p>調理時間 50分</p>
-            </header>
-            <div class="recipe-meta">
-              <p><strong>材料（15cm丸型）</strong></p>
-              <p>チョコ 100g / 無塩バター 70g / 卵 2個 / 薄力粉 20g</p>
-            </div>
-            <ol>
-              <li>チョコとバターを湯せんで溶かす。</li>
-              <li>卵黄、粉類を順に混ぜる。</li>
-              <li>メレンゲを2回に分けて合わせる。</li>
-              <li>170℃で30〜35分焼き、余熱で落ち着かせる。</li>
-            </ol>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-2.png" alt="パンナコッタ" loading="lazy" />
+            <h3>パンナコッタ</h3>
+            <p class="menu-desc">外は香ばしく、中はやわらかな口どけに仕上げます。</p>
           </article>
-
-          <article class="recipe-card">
-            <header>
-              <h3>いちごのショートケーキ</h3>
-              <p>調理時間 70分</p>
-            </header>
-            <div class="recipe-meta">
-              <p><strong>材料（12cm）</strong></p>
-              <p>卵 2個 / 砂糖 60g / 薄力粉 60g / 生クリーム 200ml / いちご</p>
-            </div>
-            <ol>
-              <li>共立てした生地を170℃で約25分焼く。</li>
-              <li>完全に冷まして3枚にスライスする。</li>
-              <li>シロップ、クリーム、いちごを重ねる。</li>
-              <li>全体をナッペしてデコレーションする。</li>
-            </ol>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-3.png" alt="桜モンブラン" loading="lazy" />
+            <h3>桜モンブラン</h3>
+            <p class="menu-desc">爽やかな香りとクリームのコクを重ねた季節のタルト。</p>
+          </article>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-4.png" alt="クッキーサンド" loading="lazy" />
+            <h3>クッキーサンド</h3>
+            <p class="menu-desc">繊細な食感と上品な甘さを楽しむ人気メニュー。</p>
+          </article>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-5.png" alt="塩パン" loading="lazy" />
+            <h3>塩パン</h3>
+            <p class="menu-desc">香ばしいシューにクリームをたっぷり絞る一品。</p>
+          </article>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-6.png" alt="わらび餅" loading="lazy" />
+            <h3>わらび餅</h3>
+            <p class="menu-desc">しっとり濃厚で余韻まで楽しめる王道ケーキ。</p>
           </article>
         </div>
       </div>
@@ -238,7 +281,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>© 2026 ミルクと粉の料理教室</p>
+      <p>© 2026 ひとつうえのお菓子作りを、</p>
       <a href="#top">ページ上部へ</a>
     </div>
   </footer>

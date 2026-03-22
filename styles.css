@@ -90,7 +90,6 @@ li {
   color: var(--ink);
   text-decoration: none;
   font-family: "Noto Serif JP", serif;
-  font-size: 1.02rem;
 }
 
 .global-nav {
@@ -144,7 +143,7 @@ li {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: start;
 }
@@ -164,30 +163,70 @@ li {
   max-width: 44ch;
 }
 
-.hero-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 8px;
-  padding: 1.2rem;
-  backdrop-filter: blur(2px);
-}
-
-.hero-card-title {
-  margin: 0 0 0.4rem;
-  color: var(--sub);
-  font-size: 0.85rem;
-}
-
-.hero-card h2 {
-  margin-bottom: 0.6rem;
-  font-size: 1.35rem;
-}
-
 .hero-actions {
   display: flex;
   gap: 0.7rem;
   flex-wrap: wrap;
   margin-top: 1.4rem;
+}
+
+.monthly-theme {
+  padding-top: 2.2rem;
+}
+
+.theme-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.theme-image {
+  position: relative;
+  min-height: 220px;
+  border-radius: 6px;
+  overflow: clip;
+  background: linear-gradient(130deg, #f2dce5 0%, #f7e8ef 100%);
+}
+
+.theme-image-label {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.theme-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.theme-list li {
+  border-bottom: 1px solid var(--line);
+  padding: 0.55rem 0;
+}
+
+.theme-card .btn {
+  margin-top: 1rem;
 }
 
 .btn {
@@ -229,14 +268,79 @@ li {
   padding: 0.9rem 1rem;
 }
 
+.about {
+  padding-top: 2.2rem;
+}
+
+.about-blend {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.about-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  transform: scale(1.08);
+  transform-origin: left center;
+  opacity: 0.82;
+  display: block;
+}
+
+.about-blend::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 0.68) 58%, #ffffff 75%);
+}
+
+.about-copy {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  max-width: min(520px, 100%);
+  padding: 2rem 1.6rem;
+  transform: translateX(-48px);
+}
+
+.about-copy h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 3.3vw, 2.6rem);
+  line-height: 1.35;
+}
+
+.about-copy p {
+  margin-top: 0;
+}
+
+.about-title-line {
+  white-space: nowrap;
+}
+
 .gallery {
   background: var(--surface-soft);
 }
 
-.gallery-grid {
+.lesson-marquee {
   margin-top: 1.2rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+
+.lesson-track {
+  width: max-content;
+  display: flex;
+  gap: 0.85rem;
+  animation: lesson-marquee 30s linear infinite;
+}
+
+.lesson-group {
+  display: flex;
   gap: 0.85rem;
 }
 
@@ -251,6 +355,8 @@ li {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: clip;
+  width: min(280px, 74vw);
+  flex: 0 0 auto;
 }
 
 .sweet-card h3,
@@ -300,34 +406,60 @@ li {
   background: linear-gradient(130deg, #efd7e0 0%, #f8ebf0 100%);
 }
 
-.recipe-grid {
-  margin-top: 1.2rem;
+.t5 {
+  background: linear-gradient(130deg, #e9d3e1 0%, #f7e7ef 100%);
+}
+
+.t6 {
+  background: linear-gradient(130deg, #f0dde6 0%, #f9eef3 100%);
+}
+
+@keyframes lesson-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.425rem));
+  }
+}
+
+.menu-grid {
+  margin-top: 2.3rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem 2.2rem;
 }
 
-.recipe-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.95rem;
+.menu-item {
+  text-align: center;
+  padding: 0 0.5rem;
 }
 
-.recipe-card h3 {
-  font-size: 1.02rem;
+.menu-item img {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.2rem;
 }
 
-.recipe-card header p,
-.recipe-meta p {
-  margin: 0;
+.menu-item img.menu-cutout {
+  object-fit: contain;
+  background: var(--bg);
+
+}
+
+.menu-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.14rem;
+}
+
+.menu-desc {
+  margin: 0 auto 0.9rem;
+  max-width: 30ch;
   color: var(--sub);
-  font-size: 0.86rem;
-}
-
-.recipe-card ol {
-  padding-left: 1.2rem;
-  margin: 0.75rem 0 0;
 }
 
 .lesson-block {
@@ -418,17 +550,26 @@ textarea {
 
 @media (max-width: 980px) {
   .hero-grid,
+  .theme-card,
   .split,
   .contact-box {
     grid-template-columns: 1fr;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .about-blend {
+    min-height: 320px;
   }
 
-  .recipe-grid {
-    grid-template-columns: 1fr;
+  .about-copy {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.92) 45%, #fff 100%);
+    transform: none;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.2rem 1.5rem;
   }
 }
 
@@ -468,7 +609,28 @@ textarea {
     padding-top: 4.4rem;
   }
 
-  .gallery-grid {
+  .lesson-track {
+    animation-duration: 22s;
+  }
+
+  .menu-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-marquee {
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+  }
+
+  .lesson-track {
+    width: auto;
+    animation: none;
+  }
+
+  .lesson-group[aria-hidden="true"] {
+    display: none;
   }
 }
