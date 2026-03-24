@@ -168,6 +168,33 @@ li {
   gap: 0.7rem;
   flex-wrap: wrap;
   margin-top: 1.4rem;
+  align-items: center;
+}
+
+.social-links {
+  display: inline-flex;
+  gap: 0.7rem;
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+}
+
+.social-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .monthly-theme {
@@ -290,55 +317,105 @@ li {
   background: linear-gradient(180deg, #fbf8f9 0%, #ffffff 30%, #fff7fa 100%);
 }
 
-.about-blend {
+.room-layout {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.room-gallery {
   position: relative;
-  min-height: 420px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
   overflow: hidden;
-  background: #fff;
 }
 
-.about-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
-  transform: scale(1.08);
-  transform-origin: left center;
-  opacity: 0.82;
-  display: block;
-}
-
-.about-blend::after {
+.room-gallery::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 0.68) 58%, #ffffff 75%);
-}
-
-.about-copy {
-  position: relative;
   z-index: 1;
-  margin-left: auto;
-  max-width: min(520px, 100%);
-  padding: 2rem 1.6rem;
-  transform: translateX(-48px);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 244, 245, 0.97) 0%,
+    rgba(247, 244, 245, 0.76) 28%,
+    rgba(247, 244, 245, 0.38) 50%,
+    rgba(247, 244, 245, 0) 74%
+  );
 }
 
-.about-copy h2 {
-  margin: 0;
+.room-strip {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.room-gallery.is-inview .room-strip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.room-gallery.is-inview .room-strip:nth-child(2) {
+  transition-delay: 0.32s;
+}
+
+.room-gallery.is-inview .room-strip:nth-child(3) {
+  transition-delay: 0.64s;
+}
+
+.room-copy {
+  position: absolute;
+  inset: 0;
+  padding: 1.15rem 1.25rem;
   color: var(--ink);
-  font-size: clamp(1.7rem, 3.3vw, 2.6rem);
-  line-height: 1.35;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.65rem;
+  z-index: 2;
+  pointer-events: none;
+  width: min(46vw, 560px);
 }
 
-.about-copy p {
-  margin-top: 0;
+.room-copy p {
+  margin: 0;
+  font-size: 1.08rem;
 }
 
-.about-title-line {
-  white-space: nowrap;
+.room-copy-block {
+  padding: 0.5rem 0.35rem;
+  display: block;
+  text-shadow: none;
+  line-height: 1.75;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.room-gallery.is-inview .room-copy-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-gallery.is-inview .room-copy-block:nth-child(2) {
+  transition-delay: 0.32s;
+}
+
+.room-gallery.is-inview .room-copy-block:nth-child(3) {
+  transition-delay: 0.64s;
+}
+
+.room-copy-block strong {
+  display: block;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  font-size: 1.22rem;
 }
 
 .gallery {
@@ -546,10 +623,10 @@ li {
 }
 
 .menu-grid {
-  margin-top: 2.3rem;
+  margin-top: 1.1rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem 2.2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem 0.7rem;
 }
 
 .recipes {
@@ -558,16 +635,17 @@ li {
 
 .menu-item {
   text-align: center;
-  padding: 0 0.5rem;
+  padding: 0 0.1rem;
 }
 
 .menu-item img {
   width: 100%;
-  max-width: 340px;
+  max-width: 260px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 0.45rem;
+  transition: transform 0.22s ease;
 }
 
 .menu-item img.menu-cutout {
@@ -576,15 +654,31 @@ li {
 
 }
 
-.menu-item h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.14rem;
+.menu-item:hover img {
+  transform: scale(1.16);
 }
 
-.menu-desc {
-  margin: 0 auto 0.9rem;
-  max-width: 30ch;
+.menu-item h3 {
+  margin-bottom: 0;
+  font-size: 0.98rem;
+}
+
+.menu-heading-note {
+  margin: -0.3rem 0 0;
   color: var(--sub);
+  font-size: 0.84rem;
+}
+
+.menu-etc {
+  margin: 0.2rem 0 0;
+  text-align: right;
+  padding-right: 0.35rem;
+  color: var(--sub);
+  font-size: 0.84rem;
+}
+
+.lesson {
+  padding-top: 2rem;
 }
 
 .lesson-block {
@@ -592,6 +686,111 @@ li {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1.1rem;
+}
+
+.course-block {
+  margin-top: -1rem;
+  margin-bottom: 0.7rem;
+}
+
+.course-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.95rem;
+}
+
+.course-card h3 {
+  font-size: 1.02rem;
+}
+
+.course-card p {
+  margin: 0.35rem 0 0;
+  color: var(--sub);
+}
+
+.course-price {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.schedule-block {
+  margin-bottom: 1rem;
+}
+
+.calendar-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.calendar-head {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--sub);
+}
+
+.calendar-day {
+  min-height: 62px;
+  padding: 0.4rem 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.15rem;
+  font-size: 0.86rem;
+}
+
+.calendar-day small {
+  font-size: 0.68rem;
+  color: var(--accent);
+}
+
+.calendar-event {
+  font-style: normal;
+  font-size: 0.64rem;
+  color: var(--sub);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.calendar-level {
+  font-size: 0.66rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.calendar-day.is-closed {
+  background: #fff5f8;
+}
+
+.calendar-day.is-theme {
+  background: linear-gradient(180deg, #fff7fb 0%, #ffeef6 100%);
+  border-color: #dca8be;
+  box-shadow: inset 0 0 0 1px #f2cad9;
+}
+
+.calendar-theme-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.calendar-day.is-empty {
+  background: transparent;
+  border-color: transparent;
 }
 
 .schedule {
@@ -631,6 +830,27 @@ li {
 .contact-form {
   display: grid;
   gap: 0.7rem;
+}
+
+.access-info {
+  margin-top: 0.7rem;
+}
+
+.access-info p {
+  margin: 0 0 0.2rem;
+}
+
+.access-info ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.contact-map {
+  width: 100%;
+  height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 0.85rem;
 }
 
 .contact-form label {
@@ -676,25 +896,28 @@ textarea {
 @media (max-width: 980px) {
   .hero-grid,
   .theme-card,
+  .course-grid,
   .split,
   .contact-box {
     grid-template-columns: 1fr;
   }
 
-  .about-blend {
-    min-height: 320px;
+  .room-layout {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 
-  .about-copy {
-    max-width: 100%;
-    padding: 1.5rem 1rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.92) 45%, #fff 100%);
-    transform: none;
+  .room-strip {
+    height: 205px;
+  }
+
+  .room-copy {
+    padding: 1rem;
   }
 
   .menu-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.2rem 1.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.1rem 0.65rem;
   }
 }
 
@@ -735,8 +958,18 @@ textarea {
   }
 
   .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 0.6rem;
+  }
+
+  .calendar-grid {
+    gap: 0.35rem;
+  }
+
+  .calendar-day {
+    min-height: 56px;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.2rem;
   }
 }
 

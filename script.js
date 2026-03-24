@@ -214,3 +214,17 @@ if (lessonMarquee && lessonTrack) {
   syncLoopWidth();
   window.requestAnimationFrame(tickAutoScroll);
 }
+
+const roomGallery = document.querySelector('.room-gallery');
+
+if (roomGallery) {
+  const roomObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      roomGallery.classList.add('is-inview');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+
+  roomObserver.observe(roomGallery);
+}

@@ -35,15 +35,27 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="kicker">akiko baking class</p>
-          <h1>やさしい甘さを、<br />日々のごほうびに。</h1>
+          <h1>ひとつうえのお菓子作りを、<br />毎日のキッチンで楽しむ。</h1>
           <p>
-            小国ジャージー牛乳や旬の果物を使って、
-            季節のお菓子を丁寧に仕上げる少人数制レッスン。
-            「家でもおいしく作れる」レシピを毎回お持ち帰りいただけます。
+            ひとつうえのお菓子作りを、素材選びから焼き上げまで丁寧に学べる少人数レッスン。<br />
+            お店のような仕上がりを、毎日のキッチンで再現できる実践的なコツをお伝えします。
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">体験レッスンを予約</a>
-            <a class="btn btn-light" href="#recipes">レシピを見る</a>
+            <div class="social-links" aria-label="公式SNS">
+              <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.2" cy="6.8" r="1.1"></circle>
+                </svg>
+              </a>
+              <a class="social-icon" href="https://line.me/" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 4C6.9 4 3 7.2 3 11.2c0 3.5 3 6.4 7 7l-.4 2.2c-.1.4.3.7.7.5l2.9-1.8h.8c5.1 0 9-3.2 9-7.2S17.1 4 12 4z"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -52,20 +64,16 @@
     <section id="about" class="about section-pad">
       <div class="wrap">
         <h2 class="section-main-heading">Room</h2>
-        <div class="about-blend">
-          <img class="about-photo" src="images/about-class.jpg" alt="教室について" loading="lazy" />
-          <div class="about-copy">
-            <p class="section-label">教室について</p>
-            <h2><span class="about-title-line">ひとつうえのお菓子作りを、</span><br />毎日の台所で。</h2>
-            <p>
-              目指すのは、見た目だけでなく味わいまで満足できる「ひとつうえ」の仕上がりです。
-              素材の活かし方、混ぜ方や焼き加減の見極め、失敗しにくい手順まで、
-              ご自宅でも再現できる形で丁寧にお伝えします。
-            </p>
-            <p>
-              少人数で手元を確認しながら進めるので、初心者の方も安心して参加できます。
-              写真付きレシピを毎回お渡しし、レッスン後の復習までしっかりサポートします。
-            </p>
+        <div class="room-layout">
+          <div class="room-gallery" aria-label="教室写真">
+            <img class="room-strip" src="images/room-1.jpg" alt="教室風景1" loading="lazy" />
+            <img class="room-strip" src="images/room-2.jpg" alt="教室風景2" loading="lazy" />
+            <img class="room-strip" src="images/room-3.jpg" alt="教室風景3" loading="lazy" />
+            <div class="room-copy">
+              <p class="room-copy-block"><strong>少人数制</strong>受講者それぞれの手元や進み具合を講師が細かく確認しながら進行するため、つまずいた場面でもその場で疑問を解消し、安心して次の工程へ進めます。</p>
+              <p class="room-copy-block"><strong>再現性</strong>材料の状態の見極め、混ぜ方の力加減、焼成中の判断ポイントまで段階的に学ぶことで、ご自宅でも教室に近い仕上がりを目指せる技術が身につきます。</p>
+              <p class="room-copy-block"><strong>成長実感</strong>毎回のレッスンで「今日できるようになったこと」を明確にしながら進めるため、初心者の方でも回数を重ねるごとに上達を実感し、自信を持ってお菓子作りを楽しめます。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +83,7 @@
       <div class="wrap">
         <h2 class="section-main-heading">Lesson</h2>
         <p class="theme-kicker">今月のlesson</p>
-        <div class="theme-card">
+        <div id="monthly-lesson" class="theme-card">
           <div class="theme-image">
             <img src="images/monthly-theme.jpg" alt="今月のlesson写真" loading="lazy" />
           </div>
@@ -215,53 +223,120 @@
     <section id="recipes" class="recipes section-pad">
       <div class="wrap">
         <h2 class="section-main-heading">Menu</h2>
+        <p class="menu-heading-note">ほかにも多くのスイーツやパンを作ることが出来ます。コースを選択し、一緒にひとつうえのスイーツを作りましょう。</p>
         <div class="menu-grid">
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-1.png" alt="シュークリーム" loading="lazy" />
             <h3>シュークリーム</h3>
-            <p class="menu-desc">バターの香りと層の食感をしっかり楽しめる定番。</p>
           </article>
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-2.png" alt="パンナコッタ" loading="lazy" />
             <h3>パンナコッタ</h3>
-            <p class="menu-desc">外は香ばしく、中はやわらかな口どけに仕上げます。</p>
           </article>
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-3.png" alt="桜モンブラン" loading="lazy" />
             <h3>桜モンブラン</h3>
-            <p class="menu-desc">爽やかな香りとクリームのコクを重ねた季節のタルト。</p>
           </article>
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-4.png" alt="クッキーサンド" loading="lazy" />
             <h3>クッキーサンド</h3>
-            <p class="menu-desc">繊細な食感と上品な甘さを楽しむ人気メニュー。</p>
           </article>
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-5.png" alt="塩パン" loading="lazy" />
             <h3>塩パン</h3>
-            <p class="menu-desc">香ばしいシューにクリームをたっぷり絞る一品。</p>
           </article>
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-6.png" alt="わらび餅" loading="lazy" />
             <h3>わらび餅</h3>
-            <p class="menu-desc">しっとり濃厚で余韻まで楽しめる王道ケーキ。</p>
+          </article>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-7.png" alt="チョコロールケーキ" loading="lazy" />
+            <h3>チョコロールケーキ</h3>
+          </article>
+          <article class="menu-item">
+            <img class="menu-cutout" src="images/menu-8.png" alt="アイシングクッキー" loading="lazy" />
+            <h3>アイシングクッキー</h3>
+            <p class="menu-etc">etc...</p>
           </article>
         </div>
       </div>
     </section>
 
     <section id="lesson" class="lesson section-pad">
-      <div class="wrap split lesson-block">
-        <div>
-          <p class="section-label">lesson schedule</p>
-          <h2>4月レッスンスケジュール</h2>
-          <ul class="schedule">
-            <li><span>4/6(火)</span> いちごのショートケーキ</li>
-            <li><span>4/13(火)</span> なめらかプリンとキャラメルソース</li>
-            <li><span>4/20(火)</span> 焦がしバターマドレーヌ</li>
-            <li><span>4/27(火)</span> 塩バウムクーヘン</li>
-          </ul>
+      <div class="wrap course-block">
+        <h2>course</h2>
+        <div class="course-grid">
+          <article class="course-card">
+            <h3>はじめて基礎コース（6回）</h3>
+            <p>初心者向け。計量・生地づくり・焼成の基本を6回でしっかり身につけるスタートコースです。</p>
+            <p class="course-price">料金: 39,000円 / 6回</p>
+          </article>
+          <article class="course-card">
+            <h3>ステップアップ総合コース（12回）</h3>
+            <p>初心者向け〜上級者向け。基礎から応用まで段階的に学び、季節菓子と仕上げ技術を広く習得します。</p>
+            <p class="course-price">料金: 84,000円 / 12回</p>
+          </article>
+          <article class="course-card">
+            <h3>マスター技術コース（12回）</h3>
+            <p>上級者向け。配合調整、温度管理、デコレーションの完成度を高める実践中心の集中コースです。</p>
+            <p class="course-price">料金: 96,000円 / 12回</p>
+          </article>
         </div>
+      </div>
+      <div class="wrap schedule-block">
+        <h2 class="section-main-heading">Schedule</h2>
+        <p class="menu-heading-note">4月のスケジュールです。火曜日・水曜日は定休日です。</p>
+        <div class="calendar-grid" aria-label="4月カレンダー">
+          <div class="calendar-head">日</div>
+          <div class="calendar-head">月</div>
+          <div class="calendar-head">火</div>
+          <div class="calendar-head">水</div>
+          <div class="calendar-head">木</div>
+          <div class="calendar-head">金</div>
+          <div class="calendar-head">土</div>
+
+          <div class="calendar-day is-empty"></div>
+          <div class="calendar-day is-empty"></div>
+          <div class="calendar-day is-empty"></div>
+          <div class="calendar-day is-closed"><span>1</span><small>定休日</small></div>
+          <div class="calendar-day"><span>2</span><em class="calendar-event">ミルクプリン</em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day"><span>3</span><em class="calendar-event">シュークリーム</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day"><span>4</span><em class="calendar-event">クッキーサンド</em><small class="calendar-level">★★☆</small></div>
+
+          <div class="calendar-day"><span>5</span><em class="calendar-event">桜モンブラン</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day is-theme"><span>6</span><em class="calendar-event"><a class="calendar-theme-link" href="#monthly-lesson">今月のテーマ</a></em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day is-closed"><span>7</span><small>定休日</small></div>
+          <div class="calendar-day is-closed"><span>8</span><small>定休日</small></div>
+          <div class="calendar-day"><span>9</span><em class="calendar-event">チョコロール</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day"><span>10</span><em class="calendar-event">パンナコッタ</em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day"><span>11</span><em class="calendar-event">わらび餅</em><small class="calendar-level">★☆☆</small></div>
+
+          <div class="calendar-day"><span>12</span><em class="calendar-event">オレンジタルト</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day is-theme"><span>13</span><em class="calendar-event"><a class="calendar-theme-link" href="#monthly-lesson">今月のテーマ</a></em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day is-closed"><span>14</span><small>定休日</small></div>
+          <div class="calendar-day is-closed"><span>15</span><small>定休日</small></div>
+          <div class="calendar-day"><span>16</span><em class="calendar-event">カヌレ</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day"><span>17</span><em class="calendar-event">マカロン</em><small class="calendar-level">★★★</small></div>
+          <div class="calendar-day"><span>18</span><em class="calendar-event">塩パン</em><small class="calendar-level">★★☆</small></div>
+
+          <div class="calendar-day"><span>19</span><em class="calendar-event">アイシングクッキー</em><small class="calendar-level">★★★</small></div>
+          <div class="calendar-day is-theme"><span>20</span><em class="calendar-event"><a class="calendar-theme-link" href="#monthly-lesson">今月のテーマ</a></em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day is-closed"><span>21</span><small>定休日</small></div>
+          <div class="calendar-day is-closed"><span>22</span><small>定休日</small></div>
+          <div class="calendar-day"><span>23</span><em class="calendar-event">ベイクドチーズケーキ</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day"><span>24</span><em class="calendar-event">レモンタルト</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day"><span>25</span><em class="calendar-event">焦がしバターマドレーヌ</em><small class="calendar-level">★★☆</small></div>
+
+          <div class="calendar-day"><span>26</span><em class="calendar-event">いちごミルフィーユ</em><small class="calendar-level">★★★</small></div>
+          <div class="calendar-day is-theme"><span>27</span><em class="calendar-event"><a class="calendar-theme-link" href="#monthly-lesson">今月のテーマ</a></em><small class="calendar-level">★☆☆</small></div>
+          <div class="calendar-day is-closed"><span>28</span><small>定休日</small></div>
+          <div class="calendar-day is-closed"><span>29</span><small>定休日</small></div>
+          <div class="calendar-day"><span>30</span><em class="calendar-event">抹茶ロール</em><small class="calendar-level">★★☆</small></div>
+          <div class="calendar-day is-empty"></div>
+          <div class="calendar-day is-empty"></div>
+        </div>
+      </div>
+      <div class="wrap">
         <aside class="teacher">
           <p class="section-label">teacher</p>
           <h3>講師: 田中 みく</h3>
@@ -280,6 +355,21 @@
           <h2>体験レッスンのお申し込み</h2>
           <p>Tel. 096-383-8878（受付 10:00 - 18:00）</p>
           <p>熊本市中央区水前寺4-19-37</p>
+          <div class="access-info">
+            <p><strong>アクセス方法</strong></p>
+            <ul>
+              <li>JR新水前寺駅から徒歩約12分</li>
+              <li>水前寺公園方面バス「水前寺四丁目」停留所から徒歩3分</li>
+              <li>駐車場2台あり（予約時に利用希望をご連絡ください）</li>
+            </ul>
+          </div>
+          <iframe
+            class="contact-map"
+            title="ミルクと粉の料理教室 Googleマップ"
+            src="https://www.google.com/maps?q=%E7%86%8A%E6%9C%AC%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B0%B4%E5%89%8D%E5%AF%BA4-19-37&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         <form class="contact-form" aria-label="体験レッスン申し込みフォーム">
           <label>
