@@ -49,135 +49,148 @@
       </div>
     </section>
 
-    <section class="monthly-theme section-pad">
-      <div class="wrap theme-card">
-        <div class="theme-image">
-          <p class="theme-image-label">今月のテーマ</p>
-          <img src="images/monthly-theme.jpg" alt="今月のテーマ写真" loading="lazy" />
-        </div>
-        <div>
-          <h2>いちごのショートケーキ</h2>
-          <ul class="theme-list">
-            <li>開催日: 2026年4月6日 / 4月13日 / 4月20日</li>
-            <li>時間: 10:30 - 13:00</li>
-            <li>定員: 各回6名（先着）</li>
-          </ul>
-          <a class="btn btn-primary" href="#contact">体験レッスンを予約</a>
-        </div>
-      </div>
-    </section>
-
     <section id="about" class="about section-pad">
-      <div class="wrap about-blend">
-        <img class="about-photo" src="images/about-class.jpg" alt="教室について" loading="lazy" />
-        <div class="about-copy">
-          <p class="section-label">教室について</p>
-          <h2><span class="about-title-line">ひとつうえのお菓子作りを、</span><br />毎日の台所で。</h2>
-          <p>
-            目指すのは、見た目だけでなく味わいまで満足できる「ひとつうえ」の仕上がりです。
-            素材の活かし方、混ぜ方や焼き加減の見極め、失敗しにくい手順まで、
-            ご自宅でも再現できる形で丁寧にお伝えします。
-          </p>
-          <p>
-            少人数で手元を確認しながら進めるので、初心者の方も安心して参加できます。
-            写真付きレシピを毎回お渡しし、レッスン後の復習までしっかりサポートします。
-          </p>
+      <div class="wrap">
+        <h2 class="section-main-heading">Room</h2>
+        <div class="about-blend">
+          <img class="about-photo" src="images/about-class.jpg" alt="教室について" loading="lazy" />
+          <div class="about-copy">
+            <p class="section-label">教室について</p>
+            <h2><span class="about-title-line">ひとつうえのお菓子作りを、</span><br />毎日の台所で。</h2>
+            <p>
+              目指すのは、見た目だけでなく味わいまで満足できる「ひとつうえ」の仕上がりです。
+              素材の活かし方、混ぜ方や焼き加減の見極め、失敗しにくい手順まで、
+              ご自宅でも再現できる形で丁寧にお伝えします。
+            </p>
+            <p>
+              少人数で手元を確認しながら進めるので、初心者の方も安心して参加できます。
+              写真付きレシピを毎回お渡しし、レッスン後の復習までしっかりサポートします。
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="gallery" class="gallery section-pad">
       <div class="wrap">
-        <p class="section-label">lesson</p>
-        <h2>Lesson</h2>
+        <h2 class="section-main-heading">Lesson</h2>
+        <p class="theme-kicker">今月のlesson</p>
+        <div class="theme-card">
+          <div class="theme-image">
+            <img src="images/monthly-theme.jpg" alt="今月のlesson写真" loading="lazy" />
+          </div>
+          <div>
+            <h2>いちごのショートケーキ</h2>
+            <ul class="theme-list">
+              <li>開催日: 2026年4月6日 / 4月13日 / 4月20日</li>
+              <li>時間: 10:30 - 13:00</li>
+              <li>定員: 各回6名（先着）</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">体験レッスンを予約</a>
+          </div>
+        </div>
+        <h2>人気のlesson</h2>
+        <p class="lesson-heading-note">人気のレッスンです。初心者からでも安心してご参加いただけます。興味のあるlessonにお申し込みください。</p>
         <div class="lesson-marquee" aria-label="レッスンメニュー一覧">
           <div class="lesson-track">
             <div class="lesson-group">
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="croissant">
                 <div class="thumb t1">
-                  <img src="images/lesson-croissant.jpg" alt="クロワッサン" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="croissant" aria-label="クロワッサンのレシピを見る">
+                    <img src="images/lesson-croissant.jpg" alt="クロワッサン" loading="lazy" />
+                  </button>
                 </div>
                 <h3>クロワッサン</h3>
-                <p>カスタードと旬のいちごを重ねた春の定番。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="canele">
                 <div class="thumb t2">
-                  <img src="images/lesson-canele.jpg" alt="カヌレ" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="canele" aria-label="カヌレのレシピを見る">
+                    <img src="images/lesson-canele.jpg" alt="カヌレ" loading="lazy" />
+                  </button>
                 </div>
                 <h3>カヌレ</h3>
-                <p>低温でじっくり火を入れた、とろける口どけ。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="orange-tart">
                 <div class="thumb t3">
-                  <img src="images/lesson-orange-tart.jpg" alt="オレンジタルト" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="orange-tart" aria-label="オレンジタルトのレシピを見る">
+                    <img src="images/lesson-orange-tart.jpg" alt="オレンジタルト" loading="lazy" />
+                  </button>
                 </div>
                 <h3>オレンジタルト</h3>
-                <p>ミルクのコクと塩のアクセントが人気。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="macaron">
                 <div class="thumb t4">
-                  <img src="images/lesson-macaron.jpg" alt="マカロン" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="macaron" aria-label="マカロンのレシピを見る">
+                    <img src="images/lesson-macaron.jpg" alt="マカロン" loading="lazy" />
+                  </button>
                 </div>
                 <h3>マカロン</h3>
-                <p>香り高く、翌日もしっとり楽しめます。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="eclair">
                 <div class="thumb t5">
-                  <img src="images/lesson-eclair.jpg" alt="エクレア" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="eclair" aria-label="エクレアのレシピを見る">
+                    <img src="images/lesson-eclair.jpg" alt="エクレア" loading="lazy" />
+                  </button>
                 </div>
                 <h3>エクレア</h3>
-                <p>香ばしい生地に軽いクリームをたっぷり絞ります。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="baked-cheesecake">
                 <div class="thumb t6">
-                  <img src="images/lesson-baked-cheesecake.jpg" alt="ベイクドチーズケーキ" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="baked-cheesecake" aria-label="ベイクドチーズケーキのレシピを見る">
+                    <img src="images/lesson-baked-cheesecake.jpg" alt="ベイクドチーズケーキ" loading="lazy" />
+                  </button>
                 </div>
                 <h3>ベイクドチーズケーキ</h3>
-                <p>しっとり濃厚で、余韻まで楽しめる定番ケーキ。</p>
               </article>
             </div>
             <div class="lesson-group" aria-hidden="true">
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="croissant">
                 <div class="thumb t1">
-                  <img src="images/lesson-croissant.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="croissant" aria-label="クロワッサンのレシピを見る">
+                    <img src="images/lesson-croissant.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>クロワッサン</h3>
-                <p>カスタードと旬のいちごを重ねた春の定番。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="canele">
                 <div class="thumb t2">
-                  <img src="images/lesson-canele.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="canele" aria-label="カヌレのレシピを見る">
+                    <img src="images/lesson-canele.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>カヌレ</h3>
-                <p>低温でじっくり火を入れた、とろける口どけ。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="orange-tart">
                 <div class="thumb t3">
-                  <img src="images/lesson-orange-tart.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="orange-tart" aria-label="オレンジタルトのレシピを見る">
+                    <img src="images/lesson-orange-tart.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>オレンジタルト</h3>
-                <p>ミルクのコクと塩のアクセントが人気。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="macaron">
                 <div class="thumb t4">
-                  <img src="images/lesson-macaron.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="macaron" aria-label="マカロンのレシピを見る">
+                    <img src="images/lesson-macaron.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>マカロン</h3>
-                <p>香り高く、翌日もしっとり楽しめます。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="eclair">
                 <div class="thumb t5">
-                  <img src="images/lesson-eclair.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="eclair" aria-label="エクレアのレシピを見る">
+                    <img src="images/lesson-eclair.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>エクレア</h3>
-                <p>香ばしい生地に軽いクリームをたっぷり絞ります。</p>
               </article>
-              <article class="sweet-card">
+              <article class="sweet-card" data-recipe="baked-cheesecake">
                 <div class="thumb t6">
-                  <img src="images/lesson-baked-cheesecake.jpg" alt="" loading="lazy" />
+                  <button class="lesson-recipe-btn" type="button" data-recipe="baked-cheesecake" aria-label="ベイクドチーズケーキのレシピを見る">
+                    <img src="images/lesson-baked-cheesecake.jpg" alt="" loading="lazy" />
+                  </button>
                 </div>
                 <h3>ベイクドチーズケーキ</h3>
-                <p>しっとり濃厚で、余韻まで楽しめる定番ケーキ。</p>
               </article>
             </div>
           </div>
@@ -185,10 +198,23 @@
       </div>
     </section>
 
+    <div class="recipe-modal" aria-hidden="true">
+      <div class="recipe-modal__backdrop" data-close-recipe-modal></div>
+      <section class="recipe-modal__panel" role="dialog" aria-modal="true" aria-labelledby="recipe-modal-title">
+        <button class="recipe-modal__close" type="button" data-close-recipe-modal aria-label="閉じる">×</button>
+        <img class="recipe-modal__image" id="recipe-modal-image" src="" alt="" loading="lazy" />
+        <h3 id="recipe-modal-title"></h3>
+        <p class="recipe-modal__meta" id="recipe-modal-price"></p>
+        <p class="recipe-modal__meta" id="recipe-modal-capacity"></p>
+        <p class="recipe-modal__charm-label">このお菓子の魅力</p>
+        <p class="recipe-modal__charm" id="recipe-modal-charm"></p>
+        <a class="btn btn-primary recipe-modal__apply" href="#contact" data-close-recipe-modal>申込む</a>
+      </section>
+    </div>
+
     <section id="recipes" class="recipes section-pad">
       <div class="wrap">
-        <p class="section-label">menu</p>
-        <h2>menu</h2>
+        <h2 class="section-main-heading">Menu</h2>
         <div class="menu-grid">
           <article class="menu-item">
             <img class="menu-cutout" src="images/menu-1.png" alt="シュークリーム" loading="lazy" />

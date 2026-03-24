@@ -21,7 +21,7 @@ body {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   color: var(--ink);
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #f9f6f8 52%, var(--surface-soft) 100%);
   line-height: 1.8;
 }
 
@@ -182,6 +182,33 @@ li {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.section-main-heading {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+  font-size: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  display: block;
+}
+
+.section-main-heading::after {
+  content: "";
+  position: absolute;
+  left: calc((100vw - 100%) / -2);
+  bottom: -0.18rem;
+  width: calc(100% + ((100vw - 100%) / 2));
+  height: 2px;
+  background: var(--accent);
+}
+
+.theme-kicker {
+  margin: 0 0 0.8rem;
+  color: var(--ink);
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  line-height: 1.4;
 }
 
 .theme-image {
@@ -193,17 +220,7 @@ li {
 }
 
 .theme-image-label {
-  position: absolute;
-  top: 0.7rem;
-  left: 0.7rem;
-  z-index: 1;
-  margin: 0;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--ink);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  display: none;
 }
 
 .theme-image img {
@@ -270,6 +287,7 @@ li {
 
 .about {
   padding-top: 2.2rem;
+  background: linear-gradient(180deg, #fbf8f9 0%, #ffffff 30%, #fff7fa 100%);
 }
 
 .about-blend {
@@ -324,24 +342,42 @@ li {
 }
 
 .gallery {
-  background: var(--surface-soft);
+  background: linear-gradient(180deg, #fff7fa 0%, #f9eef3 52%, #f7edf2 100%);
 }
 
 .lesson-marquee {
   margin-top: 1.2rem;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.lesson-marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.lesson-marquee.is-dragging {
+  cursor: grabbing;
+}
+
+.lesson-heading-note {
+  margin: -0.3rem 0 0;
+  color: var(--sub);
+  font-size: 0.84rem;
 }
 
 .lesson-track {
   width: max-content;
   display: flex;
-  gap: 0.85rem;
-  animation: lesson-marquee 30s linear infinite;
+  gap: 0;
 }
 
 .lesson-group {
   display: flex;
   gap: 0.85rem;
+  padding-right: 0.85rem;
 }
 
 .photo-guide {
@@ -351,28 +387,35 @@ li {
 }
 
 .sweet-card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: clip;
   width: min(280px, 74vw);
   flex: 0 0 auto;
+  cursor: pointer;
 }
 
-.sweet-card h3,
-.sweet-card p {
+.sweet-card h3 {
   margin: 0;
-  padding: 0.8rem 0.9rem;
+  padding: 0.8rem 2rem 1rem 0.9rem;
 }
 
 .sweet-card h3 {
   font-size: 1rem;
 }
 
-.sweet-card p {
-  padding-top: 0;
-  color: var(--sub);
-  font-size: 0.88rem;
+.sweet-card::after {
+  content: "";
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 1px solid var(--accent);
+  border-right: 1px solid var(--accent);
+  transform: rotate(45deg);
 }
 
 .thumb {
@@ -384,6 +427,20 @@ li {
   height: 190px;
   object-fit: cover;
   display: block;
+}
+
+.lesson-recipe-btn {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.lesson-recipe-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .thumb.is-empty img {
@@ -414,14 +471,78 @@ li {
   background: linear-gradient(130deg, #f0dde6 0%, #f9eef3 100%);
 }
 
-@keyframes lesson-marquee {
-  from {
-    transform: translateX(0);
-  }
+.recipe-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
 
-  to {
-    transform: translateX(calc(-50% - 0.425rem));
-  }
+.recipe-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.recipe-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 17, 20, 0.45);
+}
+
+.recipe-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(560px, calc(100% - 2rem));
+  max-height: min(82vh, 760px);
+  overflow: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.1rem 1rem;
+}
+
+.recipe-modal__close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.5rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.recipe-modal__meta {
+  color: var(--sub);
+  margin: -0.3rem 0 0.7rem;
+  font-size: 0.9rem;
+}
+
+.recipe-modal__image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.recipe-modal__charm-label {
+  margin: 0.3rem 0 0.25rem;
+  font-size: 0.85rem;
+  color: var(--sub);
+}
+
+.recipe-modal__charm {
+  margin: 0;
+}
+
+.recipe-modal__apply {
+  margin-top: 1rem;
 }
 
 .menu-grid {
@@ -429,6 +550,10 @@ li {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3rem 2.2rem;
+}
+
+.recipes {
+  background: linear-gradient(180deg, #f7edf2 0%, #faf7f8 42%, var(--surface-soft) 100%);
 }
 
 .menu-item {
@@ -447,7 +572,7 @@ li {
 
 .menu-item img.menu-cutout {
   object-fit: contain;
-  background: var(--bg);
+  background: transparent;
 
 }
 
@@ -609,10 +734,6 @@ textarea {
     padding-top: 4.4rem;
   }
 
-  .lesson-track {
-    animation-duration: 22s;
-  }
-
   .menu-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -627,10 +748,5 @@ textarea {
 
   .lesson-track {
     width: auto;
-    animation: none;
-  }
-
-  .lesson-group[aria-hidden="true"] {
-    display: none;
   }
 }
